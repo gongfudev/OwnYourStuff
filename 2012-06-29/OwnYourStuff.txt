@@ -1,0 +1,16 @@
+- A user should be able to sign up
+  password, email
+  
+- A user should be able to sign in
+
+- A user should be able to see a list of available services
+
+- A user should be able to chose a service to save
+
+- When chosing a service, the user must athorize OwnMyStuff on the service
+  - for twitter see: https://dev.twitter.com/docs/auth/obtaining-access-tokens
+
+- When authorized on the service, OwnMyStuff should save data for the first time an start to save data periodically
+
+- When saved, new data should be added to the timeline and presented to the user
+
