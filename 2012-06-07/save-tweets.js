@@ -88,13 +88,15 @@ function saveTweets(username) {
       saveData(username, data);
       console.log('success'); 
     },
-    // complete: function() {
-    //   showFlash('completed!');
+    // complete: function(jqXHR, textStatus) {
+    //   // showFlash('completed!');
+    //   console.log("jqXHR", jqXHR.textStatus);
+    //   console.log("textStatus", textStatus);
     // },
     error: function(jqXHR, textStatus, errorThrown) {
-      // console.log("data", data)
+      console.log("jqXHR", jqXHR)
       // $('#response').html(data[0]['text']);
-      showFlash(textStatus);
+      showFlash(jqXHR.toString()+textStatus+errorThrown);
     }
   })
 }
