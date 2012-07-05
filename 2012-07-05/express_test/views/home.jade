@@ -1,0 +1,56 @@
+- if (!everyauth.loggedIn)
+  h2 Hi!
+  p 
+    | You're not logged in. Please start by 
+    a(href='/register') creating an account
+    |  or by 
+    a(href='login') logging in
+  //- #fb-login(style='float: left; margin-left: 5px')
+  //-   a(href='/auth/facebook', style='border: 0px')
+  //-     img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/facebook_64.png')
+  //- #twitter-login(style='float: left; margin-left: 5px')
+  //-   a(href='/auth/twitter', style='border: 0px')
+  //-     img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/twitter_64.png')
+  //- #github-login(style='float: left; margin-left: 5px')
+  //-   a(href='/auth/github', style='border: 0px')
+  //-     img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/github_64.png')
+  //- #google-login(style='float: left; margin-left: 5px')
+  //-   a(href='/auth/google', style='border: 0px')
+  //-     img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/google_64.png')
+  //- #instagram-login(style='float: left; margin-left: 5px')
+  //-   a(href='/auth/instagram', style='border: 0px')
+  //-     img(style='border: 0px', src='https://instagram.com/static/images/headerWithTitle.png')
+- else
+  h2 Authenticated
+  - if (everyauth.user.id)
+    img(src="#{user.avatarUrl}")
+  #user-id Logged in with `user.id` #{user.id} - aka `everyauth.user.id` #{everyauth.user.id}
+  - if (everyauth.facebook)
+    h3 Facebook User Data
+    p= JSON.stringify(everyauth.facebook.user)
+  - else
+    #fb-login(style='float: left; margin-left: 5px')
+      a(href='/auth/facebook', style='border: 0px')
+        img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/facebook_64.png')
+  - if (user && user.twitterScreenName)
+    p
+      | You're saving tweets for the #{everyauth.user.twitterScreenName} account
+  - else
+    #twitter-login(style='float: left; margin-left: 5px')
+      a(href='/auth/twitter', style='border: 0px')
+        img(style='border: 0px', src='http://github.com/intridea/authbuttons/raw/master/png/twitter_64.png')
+  - if (everyauth.github)
+    h3 GitHub User Data
+    p= JSON.stringify(everyauth.github.user)
+  - if (everyauth.google)
+    h3 Google User Data
+    p= JSON.stringify(everyauth.google.user)
+  - if (everyauth.instagram)
+    h3 Instagram User Data
+    p= JSON.stringify(everyauth.instagram.user)
+    
+  - if (user && user.tweets)
+    h3 Tweets
+    ul
+      - for tweet in user.tweets
+        li= tweet.text

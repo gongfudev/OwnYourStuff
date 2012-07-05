@@ -1,0 +1,21 @@
+!!!
+html
+  head
+    title YrrrrStuffff
+    link(rel='stylesheet', href='/assets/stylesheets/application.css')
+  body
+    - if (!everyauth.loggedIn)
+      p
+        a(href='/register') Register
+        |  /  
+        a(href='/login', style='border: 0px') Login with Password
+    - else
+      p 
+        a(href="/") Home
+        |  / 
+        a(href="/logout") Log Out
+    != body
+    
+    
+    
+    

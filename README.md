@@ -12,3 +12,7 @@ OwnYourStuff
 * ExpressJS pour structurer l'application
 * MongooseJS pour interagir avec MongoDB
 * Mongoose-auth pour l'identification
+
+## 2012-07-05
+
+* Download des tweets et sauvegarde dans la base de données depuis la homepage
