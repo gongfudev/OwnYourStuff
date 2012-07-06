@@ -16,3 +16,11 @@ OwnYourStuff
 ## 2012-07-05
 
 * Download des tweets et sauvegarde dans la base de données depuis la homepage
+
+## 2012-07-06 RF
+
+* bug : while the app lets several users to register or log in simultaneously,
+  they all see tweets belonging to the first-logged-in user
+
+* feature request : tweets should be displayed in a window embedded in the page, with vertical scroll
+
